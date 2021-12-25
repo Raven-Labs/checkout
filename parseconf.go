@@ -26,6 +26,7 @@ func getConfig() {
 
 	//check for errors opening file
 	if err != nil {
+        log.Println("Failed to open config file. This usually means you need to rename config.example.json to config.json and customise the values.")
         log.Fatal("Error when opening config file: ", err)
     }
  

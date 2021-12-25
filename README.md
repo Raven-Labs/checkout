@@ -1,4 +1,8 @@
 # woo checkout program 
-## go is a cool language 
-## pls dont attempt to do anything it doesnt work haha
-## work in progress
+- work in progress
+
+golang + gin best friends forever
+
+This program is intended for use as an e-commerce platform for Raven Labs Limited.
+
+Once this program is complete you may use it for whatever you like (within the law) as it is free software.
