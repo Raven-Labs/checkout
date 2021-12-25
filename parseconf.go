@@ -31,7 +31,6 @@ func getConfig() {
     }
  
 	// Unmarshal json
-    //var config Config
     err = json.Unmarshal(content, &config)
     if err != nil {
         log.Fatal("Error when Unmarshaling config json: ", err)
