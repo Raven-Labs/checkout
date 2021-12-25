@@ -5,18 +5,23 @@ import (
     "io/ioutil"
     "log"
 )
- 
+
 type Config struct {
+    DefaultAdmin struct {
+        Username string
+        Password string
+    }
     Database struct{
 		Host string
-		Port string
+		Port int
 		User string
 		Password string
 		DBName string
 	}
 }
- 
-func getConfig(entry string) string {
+
+func getConfig() {
+	log.Println("Grabbing config")
     content, err := ioutil.ReadFile("./config.json")
 
 	//check for errors opening file
@@ -25,23 +30,15 @@ func getConfig(entry string) string {
     }
  
 	// Unmarshal json
-    var config Config
+    //var config Config
     err = json.Unmarshal(content, &config)
     if err != nil {
         log.Fatal("Error when Unmarshaling config json: ", err)
     }
+
+    // Check for default credentials
+    if config.DefaultAdmin.Password == "changeme" {
+        log.Fatal("Default admin password used. Refusing to continue.")
+    }
  
-	switch entry{
-		case "dbport":
-			return config.Database.Port
-		case "dbname":
-			return config.Database.DBName
-		case "dbuser":
-			return config.Database.User
-		case "dbhost":
-			return config.Database.Host
-		case "dbpassword":
-			return config.Database.Password
-	}
-	return "err"
 }

@@ -1,0 +1,13 @@
+{
+  "defaultAdmin":{
+    "username": "admin",
+    "password": "changeme"
+  },
+  "database": {
+    "host": "localhost",
+    "port": "5432",
+    "user": "raven",
+    "password": "ravenlabs-example-password",
+    "dbname": "ravencheckout"
+  }
+}
