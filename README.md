@@ -1,4 +1,4 @@
-# woo checkout program 
+# Checkout program for Raven Labs
 - major work in progress, nothing works as intended as of yet.
 
 
