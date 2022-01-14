@@ -2,8 +2,9 @@ FROM golang:alpine
 
 MAINTAINER Raven Labs
 
+
 ENV GIN_MODE=release
-ENV PORT=3004
+ENV PORT=8080
 
 WORKDIR /go/src/checkout
 
